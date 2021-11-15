@@ -1,4 +1,4 @@
-public class Ball {
+public class Ball implements Sammenlignbar{
     private int brightness;
 
     public Ball() {
@@ -19,5 +19,16 @@ public class Ball {
 
     public String toString() {
         return Integer.toString(brightness);
+    }
+
+
+    public int compareTo(Sammenlignbar other) {
+        Ball otherBall = (Ball) other;
+        if (this.brightness < otherBall.brightness) {
+            return -1;
+        } else {
+            return 1;
+        }
+
     }
 }
